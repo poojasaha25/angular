@@ -1,0 +1,39 @@
+
+<html ng-app="ngTODO">
+
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript"src="main.js"></script>
+</head>
+<style>
+<div
+</style>
+<body>
+
+	<div></div>
+	<div ng-controller="mainController">
+	<input type="text" ng-model="query" placeholder="Search">
+		title:<input type="text" ng-model="title">
+		detail:<input type="text" ng-model="detail">
+		
+		<button ng-click="addlist(title,detail)">
+			Add
+		</button>
+		<h1>TODO LISTS</h1>
+		<ul>
+			<li ng-repeat="list in lists |filter: query" >
+				<h2>{{ list.title }}</h2>
+				<p>{{ list.details }}</p>
+				
+				<button ng-click="deletelist($index)">Delete
+				</button>
+			</li>
+		</ul>
+	</div>
+	<div></div>
+	<div></div>
+	
+	
+</body>
+
+</html>
